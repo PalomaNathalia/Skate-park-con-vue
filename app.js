@@ -21,9 +21,13 @@ app.use(
       responseOnLimit: "El tamaño de la imagen supera el límite permitido",
     })
   );
+
+  // Rutas
+app.use('/', require('./routes/routes'))
+
+// Middlewars for Vue
 app.use(history());
 app.use(express.static(__dirname + '/public'))
 
-// Rutas
-app.use('/', require('./routes/auth.routes'))
+
 
